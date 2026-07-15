@@ -37,6 +37,7 @@ import (
 	documentationpart "github.com/upbound/provider-aws/v2/internal/controller/cluster/apigateway/documentationpart"
 	documentationversion "github.com/upbound/provider-aws/v2/internal/controller/cluster/apigateway/documentationversion"
 	domainname "github.com/upbound/provider-aws/v2/internal/controller/cluster/apigateway/domainname"
+	domainnameaccessassociation "github.com/upbound/provider-aws/v2/internal/controller/cluster/apigateway/domainnameaccessassociation"
 	gatewayresponse "github.com/upbound/provider-aws/v2/internal/controller/cluster/apigateway/gatewayresponse"
 	integration "github.com/upbound/provider-aws/v2/internal/controller/cluster/apigateway/integration"
 	integrationresponse "github.com/upbound/provider-aws/v2/internal/controller/cluster/apigateway/integrationresponse"
@@ -190,6 +191,7 @@ import (
 	permissioncloudwatchevents "github.com/upbound/provider-aws/v2/internal/controller/cluster/cloudwatchevents/permission"
 	rule "github.com/upbound/provider-aws/v2/internal/controller/cluster/cloudwatchevents/rule"
 	targetcloudwatchevents "github.com/upbound/provider-aws/v2/internal/controller/cluster/cloudwatchevents/target"
+	accountpolicy "github.com/upbound/provider-aws/v2/internal/controller/cluster/cloudwatchlogs/accountpolicy"
 	definition "github.com/upbound/provider-aws/v2/internal/controller/cluster/cloudwatchlogs/definition"
 	destination "github.com/upbound/provider-aws/v2/internal/controller/cluster/cloudwatchlogs/destination"
 	destinationpolicy "github.com/upbound/provider-aws/v2/internal/controller/cluster/cloudwatchlogs/destinationpolicy"
@@ -1063,6 +1065,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		documentationpart.Setup,
 		documentationversion.Setup,
 		domainname.Setup,
+		domainnameaccessassociation.Setup,
 		gatewayresponse.Setup,
 		integration.Setup,
 		integrationresponse.Setup,
@@ -1216,6 +1219,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		permissioncloudwatchevents.Setup,
 		rule.Setup,
 		targetcloudwatchevents.Setup,
+		accountpolicy.Setup,
 		definition.Setup,
 		destination.Setup,
 		destinationpolicy.Setup,
@@ -2095,6 +2099,7 @@ func SetupGated_monolith(mgr ctrl.Manager, o controller.Options) error {
 		documentationpart.SetupGated,
 		documentationversion.SetupGated,
 		domainname.SetupGated,
+		domainnameaccessassociation.SetupGated,
 		gatewayresponse.SetupGated,
 		integration.SetupGated,
 		integrationresponse.SetupGated,
@@ -2248,6 +2253,7 @@ func SetupGated_monolith(mgr ctrl.Manager, o controller.Options) error {
 		permissioncloudwatchevents.SetupGated,
 		rule.SetupGated,
 		targetcloudwatchevents.SetupGated,
+		accountpolicy.SetupGated,
 		definition.SetupGated,
 		destination.SetupGated,
 		destinationpolicy.SetupGated,
@@ -3126,6 +3132,7 @@ func SetupWebhookWithManager_monolith(mgr ctrl.Manager) error {
 		documentationpart.SetupWebhookWithManager,
 		documentationversion.SetupWebhookWithManager,
 		domainname.SetupWebhookWithManager,
+		domainnameaccessassociation.SetupWebhookWithManager,
 		gatewayresponse.SetupWebhookWithManager,
 		integration.SetupWebhookWithManager,
 		integrationresponse.SetupWebhookWithManager,
@@ -3279,6 +3286,7 @@ func SetupWebhookWithManager_monolith(mgr ctrl.Manager) error {
 		permissioncloudwatchevents.SetupWebhookWithManager,
 		rule.SetupWebhookWithManager,
 		targetcloudwatchevents.SetupWebhookWithManager,
+		accountpolicy.SetupWebhookWithManager,
 		definition.SetupWebhookWithManager,
 		destination.SetupWebhookWithManager,
 		destinationpolicy.SetupWebhookWithManager,
